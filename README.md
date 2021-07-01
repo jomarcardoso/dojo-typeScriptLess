@@ -61,17 +61,24 @@ Qual a grandeza disso? É que são tipos que não precisamos fazer nada, só cod
 
 Vocês que mexem com TypeScript já devem ter visto algumas vezes o tipo `any`, esse cara significa "qualquer tipo", pensa nele como o pai de todos os tipos, tudo é any, e quando não tipamos os valores, implicitamente é um any, a não ser que o tipo esteja inferido no valor ou na instância, como já mostrado. O tipo object é aquele que aparece quando fazemos `typeof` de qualquer instância sempre vem `object`. Agora temos 2 tipos já, um `any` pra todos os tipos e `object` que "estende" `any` e serve para todas instâncias. Até agora ta assim:
 
-| any    | any    | any    | any        | any              |
-|--------|--------|--------|------------|------------------|
-| number | string | object | object     | object           |
-|        |        |        | Array<any> | HTMLElement      |
-|        |        |        |            | HTMLInputElement |
+| any    | any    | any    | any          | any    |
+|--------|--------|--------|--------------|--------|
+| number | string | object | object       | object |
+|        |        |        | `Array<any>` | Node   |
 
-Tudo é any, as instâncias são ou só object, ou são algum tipo mais específico. Certo, agora vamos seguir o plano desse documento de fazer uma boa tipagem, ou seja, quanto mais genérico melhor. Os tipos primitivos já foram resolvidos, agora as instâncias algumas já conseguimos melhorar, porém olha como apareceu um "any" no tipo dos dados do Array, para resolver isso vamos para o próximo capítulo.
+Tudo é any, as instâncias são ou só object, ou são algum tipo mais específico. Certo, agora vamos seguir o plano desse documento de fazer uma boa tipagem, ou seja, quanto mais genérico melhor. Os tipos primitivos já foram resolvidos, agora as instâncias algumas já conseguimos melhorar, porém olha como apareceu um "any" no tipo dos dados do Array, e outra coisa é o Node, se for um input ele recebe atributos diferentes de um button, então não poderia ser um tipo tão genérico. Para resolver isso vamos para o próximo capítulo.
   
 ## Extensões
   
-Vimos no capítulo anterior que as instâncias nem sempre chegam no nível de especificidade que queremos.
+Vimos no capítulo anterior que as instâncias nem sempre chegam no nível de especificidade que queremos. Primeiro falando da hierarquia completa do Node até o HTMLInputElement.
+
+- Node
+- Element
+- HTMLElement
+- HTMLInputElement
+
+O JavaScript por baixo dos panos usa essas classes, porém não podemos usá-las nos nossos códigos, então elas são consideradas Interfaces, pois não são instanciáveis.
+
 ---
 
 Acho que tem coisas que da para fazer parecido com o TypeScript.
