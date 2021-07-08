@@ -1,4 +1,4 @@
-# typeScriptLess
+# TypeScriptLess
 
 > "Não é porque você usa TypeScript que seu código está tipado, e o inverso também é verdade." Eu mesmo
 
@@ -44,31 +44,11 @@ Para tipos vindos de construtores usa-se esse cara. No console se botar `new Err
 
 Como vimos tanto no typeof como no instanceof da para ver os tipos, então, por mais que a linguagem não exija que uma tipagem declarada pelo dev, por debaixo dos panos tudo tem tipo.
 
-## Tipagem gradual
+## Tipagem no JS
 
 Agora vamos indo do mais fácil e comum para ir entendo o TypeScript e ir tipando nosso JavaScript.
 
-## Nomenclatura
-
-Como eu disse, o tipo pode ir além de uma linguagem tipada, o nome da variável é importante para saber o conteúdo (Clean Code). Não vou me aprofundar aqui, mas vou deixar alguns exemplos:
-
-- name (string)
-- isValid - boolean
-- verifyIsValid - function that returns boolean)
-- getPostByName - function getPostByName(name: string): Post
-- publishDate - Date
-- quantityOfShoes - number
-
-## Tipo inferido
-
-O tipo inferido é uma forma de dizer o tipo de uma variável sem ter que explicitamente fazer isso. Alguns exemplos:
-
-- 5 - tipo: number
-- new Error - tipo: Error
-  
-Qual a grandeza disso? É que são tipos que não precisamos fazer nada, só codar como já codamos e nosso editor de texto já vai saber como ligar com aqueles valores.
-
-## Os tipos any e object
+### Os tipos any e object
 
 Vocês que mexem com TypeScript já devem ter visto algumas vezes o tipo `any`, esse cara significa "qualquer tipo", pensa nele como o pai de todos os tipos, tudo é any, e quando não tipamos os valores, implicitamente é um any, a não ser que o tipo esteja inferido no valor ou na instância, como já mostrado. O tipo object é aquele que aparece quando fazemos `typeof` de qualquer instância sempre vem `object`. Agora temos 2 tipos já, um `any` pra todos os tipos e `object` que "estende" `any` e serve para todas instâncias. Até agora ta assim:
 
@@ -79,7 +59,33 @@ Vocês que mexem com TypeScript já devem ter visto algumas vezes o tipo `any`, 
 
 Tudo é any, as instâncias são ou só object, ou são algum tipo mais específico. Certo, agora vamos seguir o plano desse documento de fazer uma boa tipagem, ou seja, quanto mais genérico melhor. Os tipos primitivos já foram resolvidos, agora as instâncias algumas já conseguimos melhorar, porém olha como apareceu um "any" no tipo dos dados do Array, e outra coisa é o Node, se for um input ele recebe atributos diferentes de um button, então não poderia ser um tipo tão genérico. Para resolver isso vamos para o próximo capítulo.
   
-## Extensões
+## Fazendo uma tipagem gradual no JS
+
+### Nomenclatura
+
+Como eu disse, o tipo pode ir além de uma linguagem tipada, o nome da variável é importante para saber o conteúdo (Clean Code). Não vou me aprofundar aqui, mas vou deixar alguns exemplos:
+
+- name (string)
+- isValid - boolean
+- verifyIsValid - function that returns boolean)
+- getPostByName - function getPostByName(name: string): Post
+- publishDate - Date
+- quantityOfShoes - number
+
+### Tipo inferido
+
+O tipo inferido é uma forma de dizer o tipo de uma variável sem ter que explicitamente fazer isso. Alguns exemplos:
+
+- 5 - tipo: number
+- new Error - tipo: Error
+  
+Qual a grandeza disso? É que são tipos que não precisamos fazer nada, só codar como já codamos e nosso editor de texto já vai saber como ligar com aqueles valores.
+
+### Classes
+
+### Extensões
+
+### JSDoc
   
 Vimos no capítulo anterior que as instâncias nem sempre chegam no nível de especificidade que queremos. Primeiro falando da hierarquia completa do Node até o HTMLInputElement.
 
