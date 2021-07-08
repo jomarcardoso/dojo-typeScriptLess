@@ -48,6 +48,17 @@ Como vimos tanto no typeof como no instanceof da para ver os tipos, então, por 
 
 Agora vamos indo do mais fácil e comum para ir entendo o TypeScript e ir tipando nosso JavaScript.
 
+## Nomenclatura
+
+Como eu disse, o tipo pode ir além de uma linguagem tipada, o nome da variável é importante para saber o conteúdo (Clean Code). Não vou me aprofundar aqui, mas vou deixar alguns exemplos:
+
+- name (string)
+- isValid - boolean
+- verifyIsValid - function that returns boolean)
+- getPostByName - function getPostByName(name: string): Post
+- publishDate - Date
+- quantityOfShoes - number
+
 ## Tipo inferido
 
 O tipo inferido é uma forma de dizer o tipo de uma variável sem ter que explicitamente fazer isso. Alguns exemplos:
