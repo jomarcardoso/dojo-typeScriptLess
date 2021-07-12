@@ -83,6 +83,35 @@ Qual a grandeza disso? É que são tipos que não precisamos fazer nada, só cod
 
 ### Classes
 
+Tanto as classes como as funções podem exercer a função de "forma" para os objetos em JS. Quando se usa classe, o objeto instanciado a partir dela é literalmente daquele "tipo", uma instância de Cat é do tipo Cat. Na função isso é informal, mas funciona também.
+
+```js
+class Cat {
+  constructor(color = '') {
+    this.color = color;
+  }
+
+  sleep() {
+    console.log('zzz');
+  }
+}
+
+const blackCat = new Cat('black');
+
+function createCat(color = '') {
+  function sleep() {
+    console.log('zzz');
+  }
+
+  return {
+    color,
+    sleep,
+  };
+}
+
+const grayCat = createCat('gray');
+```
+
 ### Extensões
 
 ### JSDoc
