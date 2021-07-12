@@ -112,6 +112,20 @@ function createCat(color = '') {
 const grayCat = createCat('gray');
 ```
 
+## Objetos como enum
+
+```js
+enum Gender {
+  MALE,
+  FEMALE
+}
+
+const enumGender = {
+  MALE: : 0,
+  FEMALE: 1
+}
+```
+
 ### Extensões
 
 ### JSDoc
@@ -129,14 +143,4 @@ O JavaScript por baixo dos panos usa essas classes, porém não podemos usá-las
 
 Acho que tem coisas que da para fazer parecido com o TypeScript.
 
-```js
-enum enumGender {
-  MALE,
-  FEMALE
-}
 
-const enumGender = {
-  MALE: : 0,
-  FEMALE: 0  
-}
-```
