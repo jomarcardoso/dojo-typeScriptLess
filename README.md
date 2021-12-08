@@ -25,7 +25,7 @@ Tipo objeto (instâncias das funções)
 - new Error
 - new RegExp
 - [] - arrays
-- {} - objetos
+- {} - objeto (notação literal)
 - new Number
 
 Aqui o number entra como objeto, isso porque usamos a classe Number para instanciar ele.
