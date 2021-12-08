@@ -4,16 +4,17 @@
 
 Sou fã demais do TypeScript, ele mudou muito a forma como escrevo meu código. Hoje em dia, mesmo sem ele, meu código é melhor do que antes de conhecer o TypeScript, pois ele mudou a minha forma de ver o código e os tipos.
 
-Apesar do JavaScript não ser uma linguagem tipada, ela possui tipos.
+Apesar do JavaScript não ser uma linguagem tipada, ela [possui tipos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures).
 
 Os tipos primitivos:
 
-- Boolean — true ou false
-- Null — valor nulo
-- Undefined — sem valor
-- Number — inteiros, decimais...
-- String — texto
-- Symbol — chaves (keys)
+- boolean — true ou false
+- null — valor nulo
+- undefined — sem valor
+- number — inteiros, decimais...
+- string — texto
+- [symbol — chaves (keys)](https://developer.mozilla.org/en-US/docs/Glossary/Symbol)
+- [bigint](https://developer.mozilla.org/en-US/docs/Glossary/BigInt)
 
 Tipos função:
 
