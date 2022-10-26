@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Title</title>
-    <meta charset="utf-8">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+<head>
+<title>TypeScriptLess</title>
+<meta charset="utf-8">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-      body { font-family: 'Droid Serif'; }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: normal;
-      }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-    </style>
-  </head>
-  <body>
-    <textarea id="source">
+body { font-family: 'Droid Serif'; }
+h1, h2, h3 {
+font-family: 'Yanone Kaffeesatz';
+font-weight: normal;
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+</style>
+</head>
+<body>
+<textarea id="source">
 
 class: center, middle
 
-# Title
+# TypeScriptLess
 
 ---
 
@@ -33,13 +33,36 @@ class: center, middle
 
 ---
 
-# Introduction
+## Nomenclatura adequada
+      
+---
+      
+.left-column[
+  ## Nomenclatura adequada
+  
+  
+]
+.right-column[
+  A simple, in-browser, Markdown-driven slideshow tool targeted at people who know their way around HTML and CSS, featuring:
 
-    </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
-    <script>
-      var slideshow = remark.create();
-    </script>
-  </body>
+- Markdown formatting, with smart extensions
+
+- Presenter mode, with cloned slideshow view
+
+- Syntax highlighting, supporting a range of languages
+
+- Slide scaling, thus similar appearance on all devices / resolutions .red[*]
+
+- Touch support for smart phones and pads, i.e. swipe to navigate slides
+
+.footnote[.red[*] At least browsers try their best]
+]
+
+</textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+var slideshow = remark.create();
+</script>
+</body>
 </html>
