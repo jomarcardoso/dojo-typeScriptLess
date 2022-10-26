@@ -78,7 +78,7 @@ O nome da variável deve estar de acordo com o seu conteúdo, usando uma linguag
       
 - **name:** string
 - **valid:** boolean
-- **isValid:** function that returns boolean)
+- **isValid:** isValid(any: any): boolean
 - getPostByName:
 - publicationDate:
 - quantityOfShoes:   
@@ -91,7 +91,7 @@ O nome da variável deve estar de acordo com o seu conteúdo, usando uma linguag
       
 - **name:** string
 - **valid:** boolean
-- **isValid:** function that returns boolean)
+- **isValid:** isValid(any: any): boolean
 - **getPostByName:** getPostByName(name: string): Post
 - publicationDate:
 - quantityOfShoes:
@@ -104,7 +104,7 @@ O nome da variável deve estar de acordo com o seu conteúdo, usando uma linguag
       
 - **name:** string
 - **valid:** boolean
-- **isValid:** function that returns boolean)
+- **isValid:** isValid(any: any): boolean
 - **getPostByName:** getPostByName(name: string): Post
 - **publicationDate:** Date
 - quantityOfShoes:
@@ -117,10 +117,65 @@ O nome da variável deve estar de acordo com o seu conteúdo, usando uma linguag
       
 - **name:** string
 - **valid:** boolean
-- **isValid:** function that returns boolean)
+- **isValid:** isValid(any: any): boolean
 - **getPostByName:** getPostByName(name: string): Post
 - **publicationDate:** Date
 - **quantityOfShoes:** number
+
+---
+
+## Tipos inferidos
+      
+Pelo valor da variável, atributo, parâmetro ou retorno de uma função é possível inferir o tipo e o TypeScript tambem faz uso disso.
+      
+- `name = 'Jomar'`
+- `isValidName(name = '')`
+- `getDeviceById(id = 0)`
+- `new Error()`
+
+---
+
+## Tipos inferidos
+      
+Pelo valor da variável, atributo, parâmetro ou retorno de uma função é possível inferir o tipo e o TypeScript tambem faz uso disso.
+      
+- `name = 'Jomar'`: string
+- `isValidName(name = '')`
+- `getDeviceById(id = 0)`
+- `new Error()`
+
+---
+
+## Tipos inferidos
+      
+Pelo valor da variável, atributo, parâmetro ou retorno de uma função é possível inferir o tipo e o TypeScript tambem faz uso disso.
+      
+- `name = 'Jomar'`: string
+- `isValidName(name = '')`: `(name: string): boolean`
+- `getDeviceById(id = 0)`
+- `new Error()`
+
+---
+
+## Tipos inferidos
+      
+Pelo valor da variável, atributo, parâmetro ou retorno de uma função é possível inferir o tipo e o TypeScript tambem faz uso disso.
+      
+- `name = 'Jomar'`: string
+- `isValidName(name = '')`: `(name: string): boolean`
+- `getDeviceById(id = 0)`: `(id: number): Device`
+- `new Error()`
+
+---
+
+## Tipos inferidos
+      
+Pelo valor da variável, atributo, parâmetro ou retorno de uma função é possível inferir o tipo e o TypeScript tambem faz uso disso.
+      
+- `name = 'Jomar'`: string
+- `isValidName(name = '')`: `(name: string): boolean`
+- `getDeviceById(id = 0)`: `(id: number): Device`
+- `new Error()`: Error
 
 </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js">
