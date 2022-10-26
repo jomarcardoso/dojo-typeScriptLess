@@ -70,7 +70,7 @@ Como eu disse, o tipo pode ir além de uma linguagem tipada, o nome da variável
 - isValid - boolean
 - verifyIsValid - function that returns boolean)
 - getPostByName - function getPostByName(name: string): Post
-- publishDate - Date
+- publicationDate - Date
 - quantityOfShoes - number
 
 ### Tipo inferido
