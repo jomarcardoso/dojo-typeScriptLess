@@ -93,8 +93,8 @@ function getPeopleByName(name = '') {
 
 O tipo inferido é uma forma de dizer o tipo de uma variável sem ter que explicitamente fazer isso. Alguns exemplos:
 
-- 5 - tipo: number
-- new Error - tipo: Error
+- `5` - tipo: number
+- `new Error` - tipo: Error
   
 Qual a grandeza disso? É que são tipos que não precisamos fazer nada, só codar como já codamos e nosso editor de texto já vai saber como ligar com aqueles valores.
 
