@@ -75,6 +75,20 @@ Como eu disse, o tipo pode ir além de uma linguagem tipada, o nome da variável
 - publicationDate - Date
 - quantityOfShoes - number
 
+Por contexto, não é necessário reforçar a nomenclatura, inclusive segundo o Clean Code é um erro.
+
+```js
+function copyElTextToOtherEl(toCopy, toPaste) {
+  toPaste.innerText = toCopy.innerText;
+}
+```
+
+```js
+function getPeopleByName(name = '') {
+  return Db.find('people', name);
+}
+```
+
 ### Tipo inferido
 
 O tipo inferido é uma forma de dizer o tipo de uma variável sem ter que explicitamente fazer isso. Alguns exemplos:
