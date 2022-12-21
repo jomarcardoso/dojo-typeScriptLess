@@ -49,19 +49,46 @@ Como vimos tanto no typeof como no instanceof da para ver os tipos, então, por 
 
 ## Tipagem no JS
 
-Agora vamos indo do mais fácil e comum para ir entendo o TypeScript e ir tipando nosso JavaScript.
+Quem usa o TypeScript não quer mais voltar para o JavaScript, isso pois a segurança da tipagem nos torna mais eficientes conforme o projeto cresce.
 
-### Os tipos any e object
+A proposta aqui é ir melhorando a escrita do nosso JavaScript e com auxílio do editor de texto VS Code termos um código tipado na medida do possível.
 
-Vocês que mexem com TypeScript já devem ter visto algumas vezes o tipo `any`, esse cara significa "qualquer tipo", pensa nele como o pai de todos os tipos, tudo é any, e quando não tipamos os valores, implicitamente é um any, a não ser que o tipo esteja inferido no valor ou na instância, como já mostrado. O tipo object é aquele que aparece quando fazemos `typeof` de qualquer instância sempre vem `object`. Agora temos 2 tipos já, um `any` pra todos os tipos e `object` que "estende" `any` e serve para todas instâncias. Até agora ta assim:
+### Tipos primitivos e instâncias
 
-| any    | any    | any    | any          | any    |
-|--------|--------|--------|--------------|--------|
-| number | string | object | object       | object |
-|        |        |        | `Array<any>` | Node   |
+O JavaScript nativamente tem classes e essas classes podem ter herança
 
-Tudo é any, as instâncias são ou só object, ou são algum tipo mais específico. Certo, agora vamos seguir o plano desse documento de fazer uma boa tipagem, ou seja, quanto mais genérico melhor. Os tipos primitivos já foram resolvidos, agora as instâncias algumas já conseguimos melhorar, porém olha como apareceu um "any" no tipo dos dados do Array, e outra coisa é o Node, se for um input ele recebe atributos diferentes de um button, então não poderia ser um tipo tão genérico. Para resolver isso vamos para o próximo capítulo.
-  
+| 5      | 'test' | {}     | []     | el      | document.body   |
+| ------ | ------ | ------ | ------ | ------- | --------------- |
+| number | string | Object | Object | Object  | Object          |
+|        |        |        | Array  | Node    | Node            |
+|        |        |        |        | Element | Element         |
+|        |        |        |        |         | HTMLElement     |
+|        |        |        |        |         | HTMLBodyElement |
+
+Todos estes são `true`
+
+- `document.body instanceof Object`
+- `document.body instanceof Node`
+- `document.body instanceof Element`
+- `document.body instanceof HTMLElement`
+- `document.body instanceof HTMLBodyElement`
+
+### O tipo any
+
+Vocês que mexem com TypeScript já devem ter visto algumas vezes o tipo `any`, esse cara significa "qualquer tipo", pensa nele como o pai de todos os tipos e quando não tipamos os valores, implicitamente é um `any`, pois qualquer tipo estende ele. Por exemplo o tipo `Object` é aquele que aparece quando fazemos `typeof` de qualquer instância. Agora temos 2 tipos já, um `any` pra todos os tipos e `Object` que "estende" `any` e serve para todas instâncias. Essa mesma lógica para todos os tipos primitivos e funções. Veja a tabela abaixo:
+
+|            | 5      | 'test' | {}     | []           | el      | document.body   |
+| ---------- | ------ | ------ | ------ | ------------ | ------- | --------------- |
+| TypeScript | any    | any    | any    | any          | any     | any             |
+| JavaScript | number | string | Object | Object       | Object  | Object          |
+| JavaScript |        |        |        | Array        | Node    | Node            |
+| JavaScript |        |        |        |              | Element | Element         |
+| JavaScript |        |        |        |              |         | HTMLElement     |
+| JavaScript |        |        |        |              |         | HTMLBodyElement |
+| TypeScript | number | string | object | `Array<any>` | Element | HTMLBodyElement |
+
+Tudo é `any`, as instâncias são ou só object, ou são algum tipo mais específico. Certo, agora vamos seguir o plano desse documento de fazer uma boa tipagem, ou seja, quanto menos genérico melhor. Os tipos primitivos já foram resolvidos, agora as instâncias algumas já conseguimos melhorar, porém olha como apareceu um "any" no tipo dos dados do Array, e outra coisa é o Node, se for um input ele recebe atributos diferentes de um button, então não poderia ser um tipo tão genérico. Para resolver isso vamos para o próximo capítulo.
+
 ## Fazendo uma tipagem gradual no JS
 
 ### Nomenclatura
@@ -95,7 +122,7 @@ O tipo inferido é uma forma de dizer o tipo de uma variável sem ter que explic
 
 - `5` - tipo: number
 - `new Error` - tipo: Error
-  
+
 Qual a grandeza disso? É que são tipos que não precisamos fazer nada, só codar como já codamos e nosso editor de texto já vai saber como ligar com aqueles valores.
 
 ### Classes
@@ -129,35 +156,26 @@ function createCat(color = '') {
 const grayCat = createCat('gray');
 ```
 
-## Objetos como enum
+## Objetos como Enum ou Union
 
-```js
+```ts
+type Gender = 'MALE'  'FEMALE';
+
 enum Gender {
   MALE,
   FEMALE
 }
 
-const enumGender = {
+const Gender = {
   MALE: : 0,
   FEMALE: 1
 }
 ```
 
-### Extensões
+### Indo além da tipagem do JavaScript
 
 ### JSDoc
-  
-Vimos no capítulo anterior que as instâncias nem sempre chegam no nível de especificidade que queremos. Primeiro falando da hierarquia completa do Node até o HTMLInputElement.
 
-- Node
-- Element
-- HTMLElement
-- HTMLInputElement
+Até agora tudo que foi feito é JavaScript puro e o interpretador TypeScript do VS Code que auxilia mostrando os tipos.
 
-O JavaScript por baixo dos panos usa essas classes, porém não podemos usá-las nos nossos códigos, então elas são consideradas Interfaces, pois não são instanciáveis.
-
----
-
-Acho que tem coisas que da para fazer parecido com o TypeScript.
-
-
+Mas o TypeScript vai além na tipagem de JavaScript usando o JSDoc para definir tipos.
