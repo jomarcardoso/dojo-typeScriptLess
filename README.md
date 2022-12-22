@@ -95,14 +95,35 @@ Tudo é `any`, as instâncias são ou só object, ou são algum tipo mais espec�
 
 Como eu disse, o tipo pode ir além de uma linguagem tipada, o nome da variável é importante para saber o conteúdo (Clean Code). Não vou me aprofundar aqui, mas vou deixar alguns exemplos:
 
-- name (string)
-- isValid - boolean
-- verifyIsValid - function that returns boolean)
-- getPostByName - function getPostByName(name: string): Post
-- publicationDate - Date
-- quantityOfShoes - number
+- name: `string`
+- isValid: `boolean`
+- verifyIsValid: `function verifyIsValid(any: any): boolean`
+- getPostByName: `function getPostByName(name: string): Post`
+- publicationDate: `Date`
+- quantityOfShoes: `number`
 
 Por contexto, não é necessário reforçar a nomenclatura, inclusive segundo o Clean Code é um erro.
+
+**errado:**
+
+```js
+class Person {
+  constructor(name = '') {
+    this.personName = name;
+  }
+}
+```
+
+**certo:**
+
+
+```js
+class Person {
+  constructor(name = '') {
+    this.name = name;
+  }
+}
+```
 
 ```js
 function copyElTextToOtherEl(toCopy, toPaste) {
