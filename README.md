@@ -1,10 +1,14 @@
 [ver apresentação](https://jomarcardoso.github.io/dojo-typeScriptLess/#1)
 
+Ainda pode ser preciso programar direto no JavaScript, ou então é mais fácil do que incluir um build de TypeScript, então é bom entender como podemos ter um código mais "tipado" no JavaScript.
+
 # TypeScriptLess
 
 > "Não é porque você usa TypeScript que seu código está tipado, e o inverso também é verdade." Eu mesmo
 
 Sou fã demais do TypeScript, ele mudou muito a forma como escrevo meu código. Hoje em dia, mesmo sem ele, meu código é melhor do que antes de conhecer o TypeScript, pois ele mudou a minha forma de ver o código e os tipos.
+
+Acredito que um aprendizado evolui outro, se você aprendeu muito bem TypeScript verá que seu código JavaScript evoluiu e se você ficar um tempo escrevendo JavaScript, verá coisas boas, mais simples talvez, que você pode levar para o TypeScript.
 
 Apesar do JavaScript não ser uma linguagem tipada, ela [possui tipos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures).
 
