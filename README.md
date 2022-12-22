@@ -177,6 +177,30 @@ function createCat(color = '') {
 const grayCat = createCat('gray');
 ```
 
+### Interfaces
+
+> "Uma interface é uma classe abstrata com todos os seus métodos abstratos." Alguém que eu não lembro
+
+```js
+/**
+ * @abstract
+ */
+class Admin {
+  constructor() {
+    if (this.constructor == Admin) {
+      throw new Error("Abstract classes can't be instantiated.");
+    }
+  }
+
+  /**
+   * @abstract
+   */
+  toPost(blog, title = '', description = '', type = POST_TYPE.economy) {
+    throw new Error('Method must be implemented.');
+  }
+}
+```
+
 ## Objetos como Enum ou Union
 
 ```ts
