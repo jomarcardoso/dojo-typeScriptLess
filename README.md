@@ -120,7 +120,6 @@ class Person {
 
 **certo:**
 
-
 ```js
 class Person {
   constructor(name = '') {
@@ -184,6 +183,8 @@ const grayCat = createCat('gray');
 ### Interfaces
 
 > "Uma interface é uma classe abstrata com todos os seus métodos abstratos." Alguém que eu não lembro
+
+O código abaixo é só uma ideia louca, não recomendo.
 
 ```js
 /**
