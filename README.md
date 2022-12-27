@@ -209,17 +209,32 @@ class Admin {
 ## Objetos como Enum ou Union
 
 ```ts
-type Gender = 'MALE'  'FEMALE';
+type Gender = 'MALE' | 'FEMALE';
 
 enum Gender {
   MALE,
-  FEMALE
+  FEMALE,
+}
+```
+
+```js
+const Gender = {
+  MALE: 0,
+  FEMALE: 1,
+};
+
+class Pet {
+  // precisa tipar os atributos
+  name = '';
+  gender = Gender.FEMALE;
+
+  constructor(name = '', gender = Gender.FEMALE) {
+    this.name = name;
+    this.gender = gender;
+  }
 }
 
-const Gender = {
-  MALE: : 0,
-  FEMALE: 1
-}
+const chaminé = new Pet('Chaminé', Gender.MALE);
 ```
 
 ### Indo além da tipagem do JavaScript
@@ -228,4 +243,13 @@ const Gender = {
 
 Até agora tudo que foi feito é JavaScript puro e o interpretador TypeScript do VS Code que auxilia mostrando os tipos.
 
-Mas o TypeScript vai além na tipagem de JavaScript usando o JSDoc para definir tipos.
+Mas o TypeScript vai além na tipagem de JavaScript usando o JSDoc para definir tipos. [Veja a documentação do TypeScript sobre JSDoc](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
+
+```js
+/**
+ * @param {HTMLElement} target - Elemento a ser verificado
+ */
+function isElAboveTheScreen(target) {
+  return target.scrollHeight > target.offsetHeight;
+}
+```

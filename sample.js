@@ -5,6 +5,12 @@ const POST_TYPE = {
 };
 
 class Post {
+  title = '';
+  description = '';
+  author = new Author();
+  type = POST_TYPE.economy;
+  publicationDate = new Date();
+
   /**
    * @param {Author} author
    * @param {keyof POST_TYPE} type
@@ -25,6 +31,9 @@ class Post {
 }
 
 class Blog {
+  /** @type {Post[]} */
+  posts = [];
+
   /**
    * @param {Post[]} posts
    */
@@ -32,10 +41,7 @@ class Blog {
     this.posts = posts;
   }
 
-  /**
-   * @param {Post} post
-   */
-  addPost(post) {
+  addPost(post = new Post()) {
     this.posts.push(post);
   }
 }
@@ -61,9 +67,12 @@ class Admin {
 }
 
 class Author extends Admin {
-  constructor(name = '', bornDay) {
+  name = '';
+  birthday = new Date();
+
+  constructor(name = '', birthday = new Date()) {
     this.name = name;
-    this.bornDay = bornDay;
+    this.birthday = birthday;
   }
 
   /**
