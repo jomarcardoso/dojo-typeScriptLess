@@ -84,6 +84,8 @@ class Author extends Admin {
     const post = new Post(title, description, this, type);
 
     blog.addPost(post);
+
+    $('#blog').append(post);
   }
 }
 

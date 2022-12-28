@@ -93,7 +93,7 @@ Vocês que mexem com TypeScript já devem ter visto algumas vezes o tipo `any`, 
 | JavaScript |        |        |        |              |         | HTMLBodyElement |
 | TypeScript | number | string | object | `Array<any>` | Element | HTMLBodyElement |
 
-Tudo é `any`, as instâncias são ou só object, ou são algum tipo mais específico. Certo, agora vamos seguir o plano desse documento de fazer uma boa tipagem, ou seja, quanto menos genérico melhor. Os tipos primitivos já foram resolvidos, agora as instâncias algumas já conseguimos melhorar, porém olha como apareceu um "any" no tipo dos dados do Array, e outra coisa é o Node, se for um input ele recebe atributos diferentes de um button, então não poderia ser um tipo tão genérico. Para resolver isso vamos para o próximo capítulo.
+Tudo é `any`, as instâncias são só object, ou são algum tipo mais específico. Certo, agora vamos seguir o plano desse documento de fazer uma boa tipagem, ou seja, quanto menos genérico melhor. Os tipos primitivos já foram resolvidos, agora as instâncias algumas já conseguimos melhorar, porém olha como apareceu um "any" no tipo dos dados do Array, e outra coisa é o Node, se for um input ele recebe atributos diferentes de um button, então não poderia ser um tipo tão genérico. Para resolver isso vamos para o próximo capítulo.
 
 ## Fazendo uma tipagem gradual no JS
 
@@ -151,26 +151,43 @@ O tipo inferido é uma forma de dizer o tipo de uma variável sem ter que explic
 
 Qual a grandeza disso? É que são tipos que não precisamos fazer nada, só codar como já codamos e nosso editor de texto já vai saber como ligar com aqueles valores.
 
+```js
+const tvScreenInchesSize = 32;
+const tvScreenSize = `${tvScreenInchesSize}"`;
+```
+
+```js
+function announceError(error = new Error()) {
+  alert(error.message);
+}
+```
+
 ### Classes
 
 Tanto as classes como as funções podem exercer a função de "forma" para os objetos em JS. Quando se usa classe, o objeto instanciado a partir dela é literalmente daquele "tipo", uma instância de Cat é do tipo Cat. Na função isso é informal, mas funciona também.
 
 ```js
 class Cat {
+  color = '';
+
   constructor(color = '') {
     this.color = color;
   }
 
   sleep() {
-    console.log('zzz');
+    console.log(`${this.color} cat sleeping`);
   }
 }
 
 const blackCat = new Cat('black');
 
+blackCat.sleep(); // black cat sleeping
+```
+
+```js
 function createCat(color = '') {
   function sleep() {
-    console.log('zzz');
+    console.log(`${color} cat sleeping`);
   }
 
   return {
@@ -180,6 +197,8 @@ function createCat(color = '') {
 }
 
 const grayCat = createCat('gray');
+
+grayCat.sleep(); // gray cat sleeping
 ```
 
 ### Interfaces
@@ -211,18 +230,25 @@ class Admin {
 ## Objetos como Enum ou Union
 
 ```ts
-type Gender = 'MALE' | 'FEMALE';
+type ShapeKind = 'CIRCLE' | 'SQUARE';
 
 enum Gender {
   MALE,
   FEMALE,
 }
+
+enum Direction {
+  Up = 'UP',
+  Down = 'DOWN',
+  Left = 'LEFT',
+  Right = 'RIGHT',
+}
 ```
 
 ```js
 const Gender = {
-  MALE: 0,
-  FEMALE: 1,
+  MALE: 1,
+  FEMALE: 2,
 };
 
 class Pet {
@@ -255,3 +281,9 @@ function isElAboveTheScreen(target) {
   return target.scrollHeight > target.offsetHeight;
 }
 ```
+
+### Definition Types
+
+Arquivos `.d.ts`.
+
+[GitHub DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
