@@ -10,7 +10,7 @@ Sou fã demais do TypeScript, ele mudou muito a forma como escrevo meu código. 
 
 Acredito que um aprendizado evolui outro, se você aprendeu muito bem TypeScript verá que seu código JavaScript evoluiu e se você ficar um tempo escrevendo JavaScript, verá coisas boas, mais simples talvez, que você pode levar para o TypeScript.
 
-Apesar do JavaScript não ser uma linguagem tipada, ela [possui tipos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures).
+O JavaScript é uma linguagem fracamente tipada, mas obviamente, como toda linguagem, ela [possui tipos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures).
 
 Os tipos primitivos:
 
