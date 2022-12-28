@@ -61,13 +61,13 @@ A proposta aqui é ir melhorando a escrita do nosso JavaScript e com auxílio do
 
 O JavaScript nativamente tem classes e essas classes podem ter herança
 
-| 5      | 'test' | {}     | []     | el      | document.body   |
-| ------ | ------ | ------ | ------ | ------- | --------------- |
-| number | string | Object | Object | Object  | Object          |
-|        |        |        | Array  | Node    | Node            |
-|        |        |        |        | Element | Element         |
-|        |        |        |        |         | HTMLElement     |
-|        |        |        |        |         | HTMLBodyElement |
+|            | 5      | 'test' | {}     | []     | el      | document.body   |
+| ---------- | ------ | ------ | ------ | ------ | ------- | --------------- |
+| typeof     | number | string | Object | Object | Object  | Object          |
+| instanceof |        |        |        | Array  | Node    | Node            |
+| instanceof |        |        |        |        | Element | Element         |
+| instanceof |        |        |        |        |         | HTMLElement     |
+| instanceof |        |        |        |        |         | HTMLBodyElement |
 
 Todos estes são `true`
 
