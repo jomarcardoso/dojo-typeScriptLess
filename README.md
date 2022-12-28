@@ -63,7 +63,8 @@ O JavaScript nativamente tem classes e essas classes podem ter herança
 
 |            | 5      | 'test' | {}     | []     | el      | document.body   |
 | ---------- | ------ | ------ | ------ | ------ | ------- | --------------- |
-| typeof     | number | string | Object | Object | Object  | Object          |
+| typeof     | number | string | object | object | object  | object          |
+| instanceof |        |        | Object | Object | Object  | Object          |
 | instanceof |        |        |        | Array  | Node    | Node            |
 | instanceof |        |        |        |        | Element | Element         |
 | instanceof |        |        |        |        |         | HTMLElement     |
@@ -71,6 +72,7 @@ O JavaScript nativamente tem classes e essas classes podem ter herança
 
 Todos estes são `true`
 
+- `typeof document.body === 'object'`
 - `document.body instanceof Object`
 - `document.body instanceof Node`
 - `document.body instanceof Element`
